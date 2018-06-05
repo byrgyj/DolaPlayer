@@ -17,6 +17,13 @@ class DolaPlayer : public QMainWindow
 public:
     DolaPlayer(QWidget *parent = 0);
     ~DolaPlayer();
+
+    bool initPlayerEngine();
+
+    bool mediaOpen();
+    ssize_t mediaRead(unsigned char *buffer, size_t len);
+    int mediaSeek(uint64_t offset);
+    void mediaClose();
 private Q_SLOTS:
     void slotPlay();
     void slotProgressChanged(int);
